@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova bimestral Web</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1>Prova bimestral - Otavio lube</h1>
+    <form action="">
+        <label for="Nomw">Nome</label>
+        <input type="text" id="Nome" name="Nome"> <br>
+        <label for="Matricula">Matricula</label>
+        <input type="text" id="Matricula" name="Matricula"><br>
+     
+        <label for="Nota 1">Nota 1</label><br>
+        <input type="number" id="Nota 1" name="Nota 1" step="any" required><br>  
+    
+        <label for="Nota 2">Nota 2</label><br>
+        <input type="number" id="Nota 2" name="Nota 2" step="any" required><br>
+        <button type="button" onclick="adicionarRegistro()">Enviar</button>
+    </form>
+    
+    <h2>Tabela</h2>
+    <table id="Tabela">
+        <tr>
+            <th>Nota 1</th>
+            <th>Nota 2</th>
+            <th>Media</th>
+
+        </tr>
+        <tbody id="corpoTabela">
+        </tbody>
+    </table>
+    
+    <script>
+        function adicionarRegistro() {
+
+            var Nota 1 = parseFloat(document.getElementById("Nota 1").value);
+            var Nota 2 = parseFloat(document.getElementById("Nota 2").value);
+        
+            // Criar uma nova linha na tabela
+            var table = document.getElementById("corpoTabela");
+            var newRow = table.insertRow(table.rows.length);
+        
+            // Inserir células na nova linha
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+        
+            // Preencher as células com as informações do formulário
+            
+            cell2.textContent = Nota 1;
+            cell3.textContent = Nota 2;
+        
+        
+            document.getElementById("Nota 1").value = "";
+            document.getElementById("Nota 2").value = "";
+        }
+        </script>
+
+</body>
+</html>
